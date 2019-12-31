@@ -6,6 +6,7 @@
 
 * 设置 Git 以准备开始工作。
 
+
 设置姓名和电邮
 -----------------------------
 
@@ -14,8 +15,9 @@
 
 .. code-block:: shell
 
-    git config --global user.name "Your Name"
-    git config --global user.email "your_email@whatever.com"
+    $ git config --global user.name "Your Name"
+    $ git config --global user.email "your_email@whatever.com"
+
 
 设置行尾首选项
 ------------------------------
@@ -24,12 +26,12 @@ Unix/Mac 用户：
 
 .. code-block:: shell
 
-    git config --global core.autocrlf input
-    git config --global core.safecrlf true
+    $ git config --global core.autocrlf input
+    $ git config --global core.safecrlf true
 
 Windows 用户：
 
 .. code-block:: shell
 
-    git config --global core.autocrlf true
-    git config --global core.safecrlf true
+    $ git config --global core.autocrlf true
+    $ git config --global core.safecrlf true

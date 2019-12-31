@@ -6,6 +6,7 @@
 
 * 获取教程材料并准备运行。
 
+
 获取教程材料
 ------------
 
@@ -13,6 +14,7 @@
 
 * 教程中提供的包
 * URL：`http://gitimmersion.com/git_tutorial.zip <http://gitimmersion.com/git_tutorial.zip>`_
+
 
 解包教程
 ---------
