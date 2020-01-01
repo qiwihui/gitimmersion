@@ -35,3 +35,11 @@ Windows 用户：
 
     $ git config --global core.autocrlf true
     $ git config --global core.safecrlf true
+
+
+设置 Ruby
+------------
+
+本教程需要一个有用的 Ruby 解释器。如果你还没有安装，现在是时候设置了：
+
+`https://www.ruby-lang.org/en/installation/ <https://www.ruby-lang.org/en/installation/>`_

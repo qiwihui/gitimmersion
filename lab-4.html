@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>更多设置 &mdash; gitimmersioncn  文档</title>
+  <title>检查状态 &mdash; gitimmersioncn  文档</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="创建项目" href="lab-3.html" />
-    <link rel="prev" title="设置" href="lab-1.html" /> 
+    <link rel="next" title="做出修改" href="lab-5.html" />
+    <link rel="prev" title="创建项目" href="lab-3.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,16 +83,15 @@
               <p class="caption"><span class="caption-text">目录</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="lab-1.html">设置</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">更多设置</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">目标</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">获取教程材料</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">解包教程</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="lab-2.html">更多设置</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-3.html">创建项目</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab-4.html">检查状态</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">检查状态</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">目标</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">检查仓库的状态</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="lab-5.html">做出修改</a></li>
 </ul>
 
@@ -139,13 +138,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>更多设置</li>
+      <li>检查状态</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/lab-2.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/lab-4.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -159,28 +158,27 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>更多设置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>检查状态<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
 <h2>目标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p>获取教程材料并准备运行。</p></li>
+<li><p>学习如何检查仓库的状态。</p></li>
 </ul>
 <div class="section" id="id3">
-<h3>获取教程材料<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<p>从以下地址获得教程材料：</p>
-<ul class="simple">
-<li><p>教程中提供的包</p></li>
-<li><p>URL：<a class="reference external" href="http://gitimmersion.com/git_tutorial.zip">http://gitimmersion.com/git_tutorial.zip</a></p></li>
-</ul>
+<h3>检查仓库的状态<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> 命令检查仓库的当前状态。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
 </div>
-<div class="section" id="id4">
-<h3>解包教程<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<p>教程包中包含一个主目录 <code class="docutils literal notranslate"><span class="pre">git_tutorial</span></code> 及三个子目录：</p>
-<ul class="simple">
-<li><p>html：HTML 文件。让你的浏览器打开 <code class="docutils literal notranslate"><span class="pre">html/index.html</span></code>。</p></li>
-<li><p>work：空的工作目录。你可以在这里创建仓库。</p></li>
-<li><p>repos：预打包的 Git 仓库，你可以跳转到教程中的任何地方。如果你遇到问题，只需要复制想要的实验到你的工作目录。</p></li>
-</ul>
+<p>你可以看到：</p>
+<p>输出：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch master
+nothing to commit, working tree clean
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">status</span></code> 命令报告此处没有要提交的内容。这意味着仓库具有工作目录的全部当前状态。没有要记录的突出更改。</p>
+<p>我们将继续使用 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> 命令来监视仓库和工作目录之间的状态。</p>
 </div>
 </div>
 </div>
@@ -193,10 +191,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="lab-3.html" class="btn btn-neutral float-right" title="创建项目" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="lab-5.html" class="btn btn-neutral float-right" title="做出修改" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="lab-1.html" class="btn btn-neutral float-left" title="设置" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="lab-3.html" class="btn btn-neutral float-left" title="创建项目" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
