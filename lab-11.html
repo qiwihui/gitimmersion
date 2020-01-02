@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11. 设置别名 &mdash; gitimmersioncn  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="50. 托管你的 Git 仓库" href="lab-50.html" />
+    <link rel="prev" title="10. 查看历史" href="lab-10.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> gitimmersioncn
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lab-1.html">1. 设置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-2.html">2. 更多设置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-3.html">3. 创建项目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-4.html">4. 检查状态</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-5.html">5. 做出修改</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-6.html">6. 暂存修改</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-7.html">7. 暂存与提交</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-8.html">8. 提交修改</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-9.html">9. 聚焦修改，而不是文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-10.html">10. 查看历史</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">11. 设置别名</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">目标</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">常用别名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gitconfig-hist">在 <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> 文件中定义 <code class="docutils literal notranslate"><span class="pre">hist</span></code> 别名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">输入与转存</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shell">Shell 别名（可选）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lab-50.html">50. 托管你的 Git 仓库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-51.html">51. 共享仓库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-52.html">52. 高级/未来的主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-53.html">53. 谢谢</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gitimmersioncn</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>11. 设置别名</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/lab-11.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>11. 设置别名<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>目标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>学习如何设置别名及简写 Git 命令。</p></li>
+</ul>
+<div class="section" id="id3">
+<h3>常用别名<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> 是非常常用的命令，
+因此对它们进行缩写十分有用。</p>
+<p>添加以下内容到你的 <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> 目录的 <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> 文件中：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">alias</span><span class="p">]</span>
+  <span class="n">co</span> <span class="o">=</span> <span class="n">checkout</span>
+  <span class="n">ci</span> <span class="o">=</span> <span class="n">commit</span>
+  <span class="n">st</span> <span class="o">=</span> <span class="n">status</span>
+  <span class="n">br</span> <span class="o">=</span> <span class="n">branch</span>
+  <span class="n">hist</span> <span class="o">=</span> <span class="n">log</span> <span class="o">--</span><span class="n">pretty</span><span class="o">=</span><span class="nb">format</span><span class="p">:</span><span class="s1">&#39;%h </span><span class="si">%a</span><span class="s1">d | </span><span class="si">%s%d</span><span class="s1"> [</span><span class="si">%a</span><span class="s1">n]&#39;</span> <span class="o">--</span><span class="n">graph</span> <span class="o">--</span><span class="n">date</span><span class="o">=</span><span class="n">short</span>
+  <span class="nb">type</span> <span class="o">=</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span>
+  <span class="n">dump</span> <span class="o">=</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">p</span>
+</pre></div>
+</div>
+<p>我们已经介绍了 <code class="docutils literal notranslate"><span class="pre">commit</span></code> 和 <code class="docutils literal notranslate"><span class="pre">status</span></code> 命令。并且在上一实验中也介绍了 <code class="docutils literal notranslate"><span class="pre">log</span></code> 命令。
+接下来将介绍 <code class="docutils literal notranslate"><span class="pre">checkout</span></code> 命令。</p>
+<p>使用这些在 <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> 中定义的别名，你可以通过输入 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">co</span></code> 来表示 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>。
+同时，<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">st</span></code> 表示 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>，而 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ci</span></code> 表示 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>。
+并且，最好的是 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hist</span></code> 将使你避免很长的 <code class="docutils literal notranslate"><span class="pre">log</span></code> 命令。</p>
+<p>去试试新命令吧。</p>
+</div>
+<div class="section" id="gitconfig-hist">
+<h3>在 <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> 文件中定义 <code class="docutils literal notranslate"><span class="pre">hist</span></code> 别名<a class="headerlink" href="#gitconfig-hist" title="永久链接至标题">¶</a></h3>
+<p>在本教程中的大多数部分中，我将继续输入完整的命令。唯一的例外是，当我需要看 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> 的输出时，我将使用上面定义的 <code class="docutils literal notranslate"><span class="pre">hist</span></code> 别名。
+如果你想要和本教程保持一致，那么在继续阅读前，设置你的 <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> 文件。</p>
+</div>
+<div class="section" id="id4">
+<h3>输入与转存<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>我们已经添加了几个还没有介绍的命令别名。<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> 命令很快会介绍，<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code> 命令对于浏览 Git 很有用。</p>
+</div>
+<div class="section" id="shell">
+<h3>Shell 别名（可选）<a class="headerlink" href="#shell" title="永久链接至标题">¶</a></h3>
+<p><strong>注意</strong>：本小节是为那些运行 POSIX 类 Shell 的同学写的。Windows 用户及其他非 POSIX Shell 用户可以跳到下一个实验。</p>
+<p>如果你的 Shell 支持别名或简写，那么你可以添加一些别名。下面是我使用的：</p>
+<p>文件：<code class="docutils literal notranslate"><span class="pre">.profile</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">gs</span><span class="o">=</span><span class="s1">&#39;git status &#39;</span>
+<span class="n">alias</span> <span class="n">ga</span><span class="o">=</span><span class="s1">&#39;git add &#39;</span>
+<span class="n">alias</span> <span class="n">gb</span><span class="o">=</span><span class="s1">&#39;git branch &#39;</span>
+<span class="n">alias</span> <span class="n">gc</span><span class="o">=</span><span class="s1">&#39;git commit&#39;</span>
+<span class="n">alias</span> <span class="n">gd</span><span class="o">=</span><span class="s1">&#39;git diff&#39;</span>
+<span class="n">alias</span> <span class="n">go</span><span class="o">=</span><span class="s1">&#39;git checkout &#39;</span>
+<span class="n">alias</span> <span class="n">gk</span><span class="o">=</span><span class="s1">&#39;gitk --all&amp;&#39;</span>
+<span class="n">alias</span> <span class="n">gx</span><span class="o">=</span><span class="s1">&#39;gitx --all&#39;</span>
+
+<span class="n">alias</span> <span class="n">got</span><span class="o">=</span><span class="s1">&#39;git &#39;</span>
+<span class="n">alias</span> <span class="n">get</span><span class="o">=</span><span class="s1">&#39;git &#39;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> 的缩写 go 尤其好，它允许我输入：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ go &lt;branch&gt;
+</pre></div>
+</div>
+<p>来检出一个特定的分支。</p>
+<p>另外，我也经常通过创建足够的别名来避免打错 Git 命令，比如 <code class="docutils literal notranslate"><span class="pre">get</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">got</span></code> 表示 <code class="docutils literal notranslate"><span class="pre">git</span></code>。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lab-50.html" class="btn btn-neutral float-right" title="50. 托管你的 Git 仓库" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lab-10.html" class="btn btn-neutral float-left" title="10. 查看历史" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2019, qiwihui
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
