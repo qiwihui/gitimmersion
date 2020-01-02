@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>17. 从分支移除提交 &mdash; 沉浸式学 Git  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="18. 移除 oops 标签" href="lab-18.html" />
+    <link rel="prev" title="16. 撤销提交的修改" href="lab-16.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> 沉浸式学 Git
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lab-1.html">1. 设置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-2.html">2. 更多设置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-3.html">3. 创建项目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-4.html">4. 检查状态</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-5.html">5. 做出修改</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-6.html">6. 暂存修改</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-7.html">7. 暂存与提交</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-8.html">8. 提交修改</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-9.html">9. 聚焦修改，而不是文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-10.html">10. 查看历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-11.html">11. 设置别名</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-12.html">12. 获得旧版本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-13.html">13. 给版本打标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-14.html">14. 撤销本地修改（在暂存之前）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-15.html">15. 撤销暂存的修改（在提交之前）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-16.html">16. 撤销提交的修改</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">17. 从分支移除提交</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">目标</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">重置命令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">检查历史</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">首先，标记分支</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oops">重置到 “Oops” 前</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">什么也没丢</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">重置的危险性</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lab-18.html">18. 移除 <code class="docutils literal notranslate"><span class="pre">oops</span></code> 标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-50.html">50. 托管你的 Git 仓库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-51.html">51. 共享仓库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-52.html">52. 高级/未来的主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-53.html">53. 谢谢</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">沉浸式学 Git</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>17. 从分支移除提交</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/lab-17.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>17. 从分支移除提交<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>目标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>学习如何从分支移除最近的提交。</p></li>
+</ul>
+<p>上一小节的 <code class="docutils literal notranslate"><span class="pre">revert</span></code> 是一个让我们撤销仓库中的任意提交的强大命令。
+然而，原始提交和“撤销”提交在分支历史中都可见（使用 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> 命令）。</p>
+<p>经常我们提交代码，然后很快意识到犯了错误。如果有一个“收回”命令能允许我们假装不正确的提交从未发生过该多好啊。
+“收回”命令甚至还会阻止错误的提交在 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> 历史中的显示。这就像错误的提交从未发生过一样。</p>
+<div class="section" id="id3">
+<h3>重置命令<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>我们已经介绍过 <code class="docutils literal notranslate"><span class="pre">reset</span></code> 命令，并用它来设置暂存区以便与特定的提交保持一致（我们在之前的实验中使用 <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> 提交）。</p>
+<p>当给定提交引用（如哈希值、分支或标签名）时，<code class="docutils literal notranslate"><span class="pre">reset</span></code> 命令将：</p>
+<ol class="arabic simple">
+<li><p>重写当前分支到指向的特定提交</p></li>
+<li><p>重置暂存区到匹配特定的提交（可选）</p></li>
+<li><p>重置工作目录到匹配特定的提交（可选）</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h3>检查历史<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>让我们快速地查看我们的提交历史。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git hist
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git hist
+* 8c2f695 2019-11-01 | Revert &quot;Oops, we didn&#39;t want this commit&quot; (HEAD -&gt; master) [Jim Weirich]
+* d5723b3 2019-11-01 | Oops, we didn&#39;t want this commit [Jim Weirich]
+* 4d578d4 2019-11-01 | Added a comment (tag: v1) [Jim Weirich]
+* dc1d42f 2019-11-01 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 9a1c494 2019-11-01 | Using ARGV [Jim Weirich]
+* 063b40e 2019-11-01 | First Commit [Jim Weirich]
+</pre></div>
+</div>
+<p>我们看到在该分支中的最后两个提交为 “Oops” 和 “Revert Oops”。让我们使用 <code class="docutils literal notranslate"><span class="pre">reset</span></code> 来移除它们。</p>
+</div>
+<div class="section" id="id5">
+<h3>首先，标记分支<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>但在我们移除提交前，让我们使用一个标签来标记最新的提交以便能够再次找到它。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git tag oops
+</pre></div>
+</div>
+</div>
+<div class="section" id="oops">
+<h3>重置到 “Oops” 前<a class="headerlink" href="#oops" title="永久链接至标题">¶</a></h3>
+<p>看看上面的日志历史，我们可以知道标记为“v1”的提交是错误提交之前的正确提交。
+让我们重置分支到该位置。因为分支已经标记，所以我们可以在 <code class="docutils literal notranslate"><span class="pre">reset</span></code> 命令中使用标签名（ 如果它没有被标记，那么我们只能使用哈希值）。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git reset --hard v1
+$ git hist
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git reset --hard v1
+HEAD is now at 4d578d4 Added a comment
+$ git hist
+* 4d578d4 <span class="m">2019</span>-11-01 <span class="p">|</span> Added a comment <span class="o">(</span>HEAD -&gt; master, tag: v1<span class="o">)</span> <span class="o">[</span>Jim Weirich<span class="o">]</span>
+* dc1d42f <span class="m">2019</span>-11-01 <span class="p">|</span> Added a default value <span class="o">(</span>tag: v1-beta<span class="o">)</span> <span class="o">[</span>Jim Weirich<span class="o">]</span>
+* 9a1c494 <span class="m">2019</span>-11-01 <span class="p">|</span> Using ARGV <span class="o">[</span>Jim Weirich<span class="o">]</span>
+* 063b40e <span class="m">2019</span>-11-01 <span class="p">|</span> First Commit <span class="o">[</span>Jim Weirich<span class="o">]</span>
+</pre></div>
+</div>
+<p>我们的 <code class="docutils literal notranslate"><span class="pre">master</span></code> 分支现在指到 <code class="docutils literal notranslate"><span class="pre">v1</span></code> 提交，并且 “Oops” 和 “Revert Oops” 提交已经不在分支中。
+<code class="docutils literal notranslate"><span class="pre">--hard</span></code> 参数表示应当更新工作目录以便与新的分支头保持一致。</p>
+</div>
+<div class="section" id="id6">
+<h3>什么也没丢<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>但错误的提交发生了什么？结果是提交仍然在仓库中。事实上，我们仍然能够引用它们。
+记得在本实验开始我们使用标签 <code class="docutils literal notranslate"><span class="pre">oops</span></code> 标记了还原的提交。 让我们看看所有的提交。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git hist --all
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git hist --all
+* 8c2f695 2019-11-01 | Revert &quot;Oops, we didn&#39;t want this commit&quot; (tag: oops) [Jim Weirich]
+* d5723b3 2019-11-01 | Oops, we didn&#39;t want this commit [Jim Weirich]
+* 4d578d4 2019-11-01 | Added a comment (HEAD -&gt; master, tag: v1) [Jim Weirich]
+* dc1d42f 2019-11-01 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 9a1c494 2019-11-01 | Using ARGV [Jim Weirich]
+* 063b40e 2019-11-01 | First Commit [Jim Weirich]
+</pre></div>
+</div>
+<p>在这儿我们看到错误的提交并没有消失。它们仍然在仓库中。它们只是不再列到 master 分支中。
+如果我们没有标记它们，它们依然在仓库中，但除了使用哈希值外没有别的方法引用它们。
+未引用的提交保留在仓库中，一直到系统运行垃圾回收时。</p>
+</div>
+<div class="section" id="id7">
+<h3>重置的危险性<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>在本地分支上重置一般是安全的。任何“事故”通常都能通过重置到想要的提交来恢复。</p>
+<p>然而，如果分支在共享的远程仓库上，那么重置可能使其他用户共享的分支混乱。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lab-18.html" class="btn btn-neutral float-right" title="18. 移除 oops 标签" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lab-16.html" class="btn btn-neutral float-left" title="16. 撤销提交的修改" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2019, qiwihui
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

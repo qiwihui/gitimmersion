@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>53. 谢谢 &mdash; 沉浸式学 Git  文档</title>
+  <title>18. 移除 oops 标签 &mdash; 沉浸式学 Git  文档</title>
   
 
   
@@ -35,7 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="prev" title="52. 高级/未来的主题" href="lab-52.html" /> 
+    <link rel="next" title="50. 托管你的 Git 仓库" href="lab-50.html" />
+    <link rel="prev" title="17. 从分支移除提交" href="lab-17.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -99,11 +100,17 @@
 <li class="toctree-l1"><a class="reference internal" href="lab-15.html">15. 撤销暂存的修改（在提交之前）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-16.html">16. 撤销提交的修改</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-17.html">17. 从分支移除提交</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab-18.html">18. 移除 <code class="docutils literal notranslate"><span class="pre">oops</span></code> 标签</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">18. 移除 <code class="docutils literal notranslate"><span class="pre">oops</span></code> 标签</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">目标</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">移除 <code class="docutils literal notranslate"><span class="pre">oops</span></code> 标签</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="lab-50.html">50. 托管你的 Git 仓库</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-51.html">51. 共享仓库</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-52.html">52. 高级/未来的主题</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">53. 谢谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-53.html">53. 谢谢</a></li>
 </ul>
 
             
@@ -150,13 +157,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>53. 谢谢</li>
+      <li>18. 移除 <code class="docutils literal notranslate"><span class="pre">oops</span></code> 标签</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/lab-53.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/lab-18.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -169,9 +176,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
-<h1>53. 谢谢<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>感谢你试用 Git Immersion Labs。随时发送评论到 <a class="reference external" href="mailto:jim&#46;weirich&#37;&#52;&#48;gmail&#46;com">jim<span>&#46;</span>weirich<span>&#64;</span>gmail<span>&#46;</span>com</a>。</p>
+  <div class="section" id="oops">
+<h1>18. 移除 <code class="docutils literal notranslate"><span class="pre">oops</span></code> 标签<a class="headerlink" href="#oops" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>目标<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>移除 oops 标签（清理）。</p></li>
+</ul>
+<div class="section" id="id2">
+<h3>移除 <code class="docutils literal notranslate"><span class="pre">oops</span></code> 标签<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">oops</span></code> 标签已经完成其目的了。让我们移除它，以使它引用的提交被作为垃圾回收。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git tag -d oops
+$ git hist --all
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git tag -d oops
+Deleted tag <span class="s1">&#39;oops&#39;</span> <span class="o">(</span>was 8c2f695<span class="o">)</span>
+$ git hist --all
+* 4d578d4 <span class="m">2019</span>-11-01 <span class="p">|</span> Added a comment <span class="o">(</span>HEAD -&gt; master, tag: v1<span class="o">)</span> <span class="o">[</span>Jim Weirich<span class="o">]</span>
+* dc1d42f <span class="m">2019</span>-11-01 <span class="p">|</span> Added a default value <span class="o">(</span>tag: v1-beta<span class="o">)</span> <span class="o">[</span>Jim Weirich<span class="o">]</span>
+* 9a1c494 <span class="m">2019</span>-11-01 <span class="p">|</span> Using ARGV <span class="o">[</span>Jim Weirich<span class="o">]</span>
+* 063b40e <span class="m">2019</span>-11-01 <span class="p">|</span> First Commit <span class="o">[</span>Jim Weirich<span class="o">]</span>
+</pre></div>
+</div>
+<p>在仓库中不再列出 <code class="docutils literal notranslate"><span class="pre">oops</span></code> 标签了。</p>
+</div>
+</div>
 </div>
 
 
@@ -182,8 +213,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="lab-50.html" class="btn btn-neutral float-right" title="50. 托管你的 Git 仓库" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="lab-52.html" class="btn btn-neutral float-left" title="52. 高级/未来的主题" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="lab-17.html" class="btn btn-neutral float-left" title="17. 从分支移除提交" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
