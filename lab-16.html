@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. 做出修改 &mdash; gitimmersioncn  文档</title>
+  <title>16. 撤销提交的修改 &mdash; gitimmersioncn  文档</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="6. 暂存修改" href="lab-6.html" />
-    <link rel="prev" title="4. 检查状态" href="lab-4.html" /> 
+    <link rel="next" title="50. 托管你的 Git 仓库" href="lab-50.html" />
+    <link rel="prev" title="15. 撤销暂存的修改（在提交之前）" href="lab-15.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,15 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="lab-2.html">2. 更多设置</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-3.html">3. 创建项目</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-4.html">4. 检查状态</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. 做出修改</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">目标</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#hello-world">修改 <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> 程序</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">检查状态</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">下一步</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="lab-5.html">5. 做出修改</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-6.html">6. 暂存修改</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-7.html">7. 暂存与提交</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-8.html">8. 提交修改</a></li>
@@ -106,7 +98,17 @@
 <li class="toctree-l1"><a class="reference internal" href="lab-13.html">13. 给版本打标签</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-14.html">14. 撤销本地修改（在暂存之前）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-15.html">15. 撤销暂存的修改（在提交之前）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab-16.html">16. 撤销提交的修改</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16. 撤销提交的修改</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">目标</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">撤销提交</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">修改文件并提交</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">创建还原提交</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">检查日志</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">下一步</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="lab-50.html">50. 托管你的 Git 仓库</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-51.html">51. 共享仓库</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-52.html">52. 高级/未来的主题</a></li>
@@ -157,13 +159,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>5. 做出修改</li>
+      <li>16. 撤销提交的修改</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/lab-5.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/lab-16.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -177,52 +179,68 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>5. 做出修改<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>16. 撤销提交的修改<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
 <h2>目标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p>学习如何监控工作目录的状态。</p></li>
+<li><p>学习如何还原已经提交到本地仓库的修改。</p></li>
 </ul>
-<div class="section" id="hello-world">
-<h3>修改 <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> 程序<a class="headerlink" href="#hello-world" title="永久链接至标题">¶</a></h3>
-<p>是时候修改我们的 <code class="docutils literal notranslate"><span class="pre">hello</span></code> 程序，使它能从命令行读取参数。将 <code class="docutils literal notranslate"><span class="pre">hello.rb</span></code> 文件修改为：</p>
-<p>文件： <code class="docutils literal notranslate"><span class="pre">hello.rb</span></code></p>
-<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="nb">puts</span> <span class="s2">&quot;Hello, </span><span class="si">#{</span><span class="no">ARGV</span><span class="o">.</span><span class="n">first</span><span class="si">}</span><span class="s2">!&quot;</span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="id3">
-<h3>检查状态<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<p>现在检查工作目录的状态。</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git status
-</pre></div>
-</div>
-<p>你可以看到：</p>
-<p>输出：</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git status
-On branch master
-Changes not staged <span class="k">for</span> commit:
-<span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="o">)</span>
-<span class="o">(</span>use <span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="o">)</span>
-
-    modified:   hello.rb
-
-no changes added to commit <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> and/or <span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
-</pre></div>
-</div>
-<p>值得注意的第一件事情是 <code class="docutils literal notranslate"><span class="pre">hello.rb</span></code> 文件已被修改，但 Git 还没有被通知这些修改。</p>
-<p>还要注意的是状态信息提示你接下来需要做什么。
-如果你想要添加这些修改到仓库，可以使用 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> 命令。 否则，使用 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> 命令放弃修改。</p>
-<div class="admonition- admonition">
-<p class="admonition-title">译者注</p>
-<p>Git 2.23 引入了两个新命令 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> 和 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code>，用以替代现在的 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>。
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> 用于分支管理，<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> 用于文件的恢复。详细文档可以查看：
-<a class="reference external" href="https://git-scm.com/docs/git-switch/2.23.0">git switch</a> 和 <a class="reference external" href="https://git-scm.com/docs/git-restore/2.23.0">git restore</a>。</p>
-</div>
+<h3>撤销提交<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>有时候你意识到已经提交修改不正确，想撤销该提交。有几种方式可以处理这种问题，我们在本实验中所用的方式总是安全的。</p>
+<p>实际上我们将通过创建新的提交来撤销原来不想要修改的提交。</p>
 </div>
 <div class="section" id="id4">
-<h3>下一步<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<p>让我们暂存更改。</p>
+<h3>修改文件并提交<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>更改 <code class="docutils literal notranslate"><span class="pre">hello.rb</span></code> 文件成下列内容：</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is an unwanted but committed change</span>
+<span class="nb">name</span> <span class="o">=</span> <span class="no">ARGV</span><span class="o">.</span><span class="n">first</span> <span class="o">||</span> <span class="s2">&quot;World&quot;</span>
+
+<span class="nb">puts</span> <span class="s2">&quot;Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git add hello.rb
+$ git commit -m <span class="s2">&quot;Oops, we didn&#39;t want this commit&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>创建还原提交<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>要撤销已提交的更改，我们需要创建一个提交来移除由不想要的提交所引入的修改。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git revert HEAD
+</pre></div>
+</div>
+<p>这将带你进入编辑器中。你可以编辑默认的提交信息，或直接保存并关闭文件。你可以看到：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git revert HEAD --no-edit
+<span class="o">[</span>master 8c2f695<span class="o">]</span> Revert <span class="s2">&quot;Oops, we didn&#39;t want this commit&quot;</span>
+<span class="m">1</span> file changed, <span class="m">1</span> insertion<span class="o">(</span>+<span class="o">)</span>, <span class="m">1</span> deletion<span class="o">(</span>-<span class="o">)</span>
+</pre></div>
+</div>
+<p>因为我们将撤销我们做的最后提交，所以我们可以使用 <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> 作为还原的参数。
+通过简单的指定哈希值，我们可以撤销早期历史中的任意提交。</p>
+<p><strong>注意</strong>：命令中的 <code class="docutils literal notranslate"><span class="pre">--no-edit</span></code> 可被忽略。在不打开编辑器生成输出时需要它。</p>
+</div>
+<div class="section" id="id6">
+<h3>检查日志<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>检查日志来显示我们仓库中不想要提交和还原的提交。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git hist
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git hist
+* 8c2f695 2019-11-01 | Revert &quot;Oops, we didn&#39;t want this commit&quot; (HEAD -&gt; master) [Jim Weirich]
+* d5723b3 2019-11-01 | Oops, we didn&#39;t want this commit [Jim Weirich]
+* 4d578d4 2019-11-01 | Added a comment (tag: v1) [Jim Weirich]
+* dc1d42f 2019-11-01 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 9a1c494 2019-11-01 | Using ARGV [Jim Weirich]
+* 063b40e 2019-11-01 | First Commit [Jim Weirich]
+</pre></div>
+</div>
+<p>这种技术将处理任何提交（虽然你可能必须解决冲突）。在公开分享的远程仓库分支上使用更加安全。</p>
+</div>
+<div class="section" id="id7">
+<h3>下一步<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>接下来，让我们看看从仓库历史中移除最近提交所用的技术。</p>
 </div>
 </div>
 </div>
@@ -235,10 +253,10 @@ no changes added to commit <span class="o">(</span>use <span class="s2">&quot;gi
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="lab-6.html" class="btn btn-neutral float-right" title="6. 暂存修改" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="lab-50.html" class="btn btn-neutral float-right" title="50. 托管你的 Git 仓库" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="lab-4.html" class="btn btn-neutral float-left" title="4. 检查状态" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="lab-15.html" class="btn btn-neutral float-left" title="15. 撤销暂存的修改（在提交之前）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

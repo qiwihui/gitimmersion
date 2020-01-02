@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>12. 获得旧版本 &mdash; gitimmersioncn  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="13. 给版本打标签" href="lab-13.html" />
+    <link rel="prev" title="11. 设置别名" href="lab-11.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> gitimmersioncn
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lab-1.html">1. 设置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-2.html">2. 更多设置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-3.html">3. 创建项目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-4.html">4. 检查状态</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-5.html">5. 做出修改</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-6.html">6. 暂存修改</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-7.html">7. 暂存与提交</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-8.html">8. 提交修改</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-9.html">9. 聚焦修改，而不是文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-10.html">10. 查看历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-11.html">11. 设置别名</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12. 获得旧版本</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">目标</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">获得先前版本的哈希</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#master">回到在 master 分支中的最新版本</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lab-13.html">13. 给版本打标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-14.html">14. 撤销本地修改（在暂存之前）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-15.html">15. 撤销暂存的修改（在提交之前）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-16.html">16. 撤销提交的修改</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-50.html">50. 托管你的 Git 仓库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-51.html">51. 共享仓库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-52.html">52. 高级/未来的主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-53.html">53. 谢谢</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gitimmersioncn</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>12. 获得旧版本</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/lab-12.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>12. 获得旧版本<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>目标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>学习如何检出工作目录中的先前快照。</p></li>
+</ul>
+<p>查看之前历史很容易。<code class="docutils literal notranslate"><span class="pre">checkout</span></code> 命令将从仓库复制任意快照到工作目录。</p>
+<div class="section" id="id3">
+<h3>获得先前版本的哈希<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git hist
+</pre></div>
+</div>
+<p><strong>注意</strong>：你记得在 <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> 文件中定义的 <code class="docutils literal notranslate"><span class="pre">hist</span></code> 吗？如果忘记了，回顾一下有关 <a class="reference external" href="./lab-11.html">别名</a> 的实验。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git hist
+* 4d578d4 <span class="m">2019</span>-11-01 <span class="p">|</span> Added a comment <span class="o">(</span>HEAD -&gt; master<span class="o">)</span> <span class="o">[</span>Jim Weirich<span class="o">]</span>
+* dc1d42f <span class="m">2019</span>-11-01 <span class="p">|</span> Added a default value <span class="o">[</span>Jim Weirich<span class="o">]</span>
+* 9a1c494 <span class="m">2019</span>-11-01 <span class="p">|</span> Using ARGV <span class="o">[</span>Jim Weirich<span class="o">]</span>
+* 063b40e <span class="m">2019</span>-11-01 <span class="p">|</span> First Commit <span class="o">[</span>Jim Weirich<span class="o">]</span>
+</pre></div>
+</div>
+<p>检查日志输出，并找到第一个提交的哈希。它应当在 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hist</span></code> 输出的最后一行。
+在下面的命令中使用该哈希值（前7个字符就够了）。然后检查 <code class="docutils literal notranslate"><span class="pre">hello.rb</span></code> 文件的内容。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git checkout &lt;hash&gt;
+$ cat hello.rb
+</pre></div>
+</div>
+<p><strong>注意</strong>：这儿给的是 Unix 命令，适用于 Mac 和 Linux 系统。不幸的是，Windows 用户必须换成对应的原生命令。</p>
+<p><strong>注意</strong>：许多命令都需要仓库中的哈希值。因为你的哈希值将与我的不同，
+当你看到命令中的 &lt;hash&gt; 或 &lt;treehash&gt; 时，使用你仓库的正确哈希值替换。</p>
+<p>你可以看到：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git checkout 063b40e
+Note: checking out <span class="s1">&#39;063b40e&#39;</span>.
+
+You are in <span class="s1">&#39;detached HEAD&#39;</span> state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+<span class="k">do</span> so <span class="o">(</span>now or later<span class="o">)</span> by using -b with the checkout <span class="nb">command</span> again. Example:
+
+git checkout -b &lt;new-branch-name&gt;
+
+HEAD is now at 063b40e... First Commit
+$ cat hello.rb
+puts <span class="s2">&quot;Hello, World&quot;</span>
+</pre></div>
+</div>
+<p>在 Git 中的“detached HEAD”信息意味着 HEAD (Git 跟踪当前目录 应当匹配的那部分)是直接指向提交而非分支。
+在你没有切换到不同的分支时，这种状态只会记得已经提交的更改。
+一旦你检出了新的分支或标签，游离的提交将被丢弃 (因为 HEAD 已经移走)。
+如果你想要保存在游离状态的提交，那么你需要创建分支来记住提交。</p>
+<p>Git 的旧版本将抱怨分离的 HEAD 状态不在本地分支。现在不用担心这种情况。</p>
+<p>注意 <code class="docutils literal notranslate"><span class="pre">hello.rb</span></code> 文件的内容是原始内容。</p>
+</div>
+<div class="section" id="master">
+<h3>回到在 master 分支中的最新版本<a class="headerlink" href="#master" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git checkout master
+$ cat hello.rb
+</pre></div>
+</div>
+<p>你可以看到：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git checkout master
+Previous HEAD position was 063b40e... First Commit
+Switched to branch <span class="s1">&#39;master&#39;</span>
+$ cat hello.rb
+<span class="c1"># Default is &quot;World&quot;</span>
+<span class="nv">name</span> <span class="o">=</span> ARGV.first <span class="o">||</span> <span class="s2">&quot;World&quot;</span>
+
+puts <span class="s2">&quot;Hello, #{name}!&quot;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">master</span></code> 是默认分支的名称。通过名称检出分支，你能够回到该分支的最新版本。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lab-13.html" class="btn btn-neutral float-right" title="13. 给版本打标签" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lab-11.html" class="btn btn-neutral float-left" title="11. 设置别名" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2019, qiwihui
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
