@@ -51,7 +51,7 @@
     $ git add hello.rb
     $ git commit -m "First Commit"
 
-你应该看到：
+你可以看到：
 
 输出：
 
