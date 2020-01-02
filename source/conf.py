@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'gitimmersioncn'
+project = '沉浸式学 Git'
 copyright = '2019, qiwihui'
 author = 'qiwihui'
 
