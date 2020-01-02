@@ -28,6 +28,45 @@ Git 是一个功能强大，用于分布式版本控制的复杂系统。对功�
    lab-8
    lab-9
    lab-10
+   lab-11
+   lab-12
+   lab-13
+   lab-14
+   lab-15
+   lab-16
+   lab-17
+   lab-18
+   lab-19
+   lab-20
+   lab-21
+   lab-22
+   lab-23
+   lab-24
+   lab-25
+   lab-26
+   lab-27
+   lab-28
+   lab-29
+   lab-30
+   lab-31
+   lab-32
+   lab-33
+   lab-34
+   lab-35
+   lab-36
+   lab-37
+   lab-38
+   lab-39
+   lab-40
+   lab-41
+   lab-42
+   lab-43
+   lab-44
+   lab-45
+   lab-46
+   lab-47
+   lab-48
+   lab-49
    lab-50
    lab-51
    lab-52
