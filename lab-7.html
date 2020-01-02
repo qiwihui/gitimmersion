@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>搜索 &mdash; gitimmersioncn  文档</title>
+  <title>7. 暂存与提交 &mdash; gitimmersioncn  文档</title>
   
 
   
@@ -25,7 +25,6 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/searchtools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -35,7 +34,9 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="搜索" href="#" /> 
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="8. 提交修改" href="lab-8.html" />
+    <link rel="prev" title="6. 暂存修改" href="lab-6.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -62,7 +63,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -80,14 +81,14 @@
             
             
               <p class="caption"><span class="caption-text">目录</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="lab-1.html">1. 设置</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-2.html">2. 更多设置</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-3.html">3. 创建项目</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-4.html">4. 检查状态</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-5.html">5. 做出修改</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-6.html">6. 暂存修改</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab-7.html">7. 暂存与提交</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. 暂存与提交</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-8.html">8. 提交修改</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-9.html">9. 聚焦修改，而不是文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab-50.html">50. 托管你的 Git 仓库</a></li>
@@ -139,12 +140,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>搜索</li>
+      <li>7. 暂存与提交</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/lab-7.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -156,24 +159,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="id1">
+<h1>7. 暂存与提交<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>Git 中单独的暂存步骤符合在你需要处理源代码控制之前不进行干预的理念哲学。
+你可以继续对工作目录做出修改，当你想要与源码控制交互时，Git 允许你使用精确地记录你所做的小提交来记录你的修改。</p>
+<p>例如，假设你编辑了三个文件（<code class="docutils literal notranslate"><span class="pre">a.rb</span></code>、<code class="docutils literal notranslate"><span class="pre">b.rb</span></code> 及 <code class="docutils literal notranslate"><span class="pre">c.rb</span></code>）。
+现在你想提交所有修改，但你想要 <code class="docutils literal notranslate"><span class="pre">a.rb</span></code> 和 <code class="docutils literal notranslate"><span class="pre">b.rb</span></code> 中的修改作为单个的提交，
+而 <code class="docutils literal notranslate"><span class="pre">c.rb</span></code> 的更改与前两个文件在逻辑上不相关，那么应该分开提交。</p>
+<p>你可以执行下列命令：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git add a.rb
+$ git add b.rb
+$ git commit -m <span class="s2">&quot;Changes for a and b&quot;</span>
 
-  
-  <div id="search-results">
-  
-  </div>
+$ git add c.rb
+$ git commit -m <span class="s2">&quot;Unrelated change to c&quot;</span>
+</pre></div>
+</div>
+<p>通过分开暂存和提交，你能够更加容易地调优每一个提交。</p>
+</div>
+
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lab-8.html" class="btn btn-neutral float-right" title="8. 提交修改" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lab-6.html" class="btn btn-neutral float-left" title="6. 暂存修改" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -206,14 +224,7 @@
   
   
     
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>

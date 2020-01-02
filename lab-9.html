@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>9. 聚焦修改，而不是文件 &mdash; gitimmersioncn  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="50. 托管你的 Git 仓库" href="lab-50.html" />
+    <link rel="prev" title="8. 提交修改" href="lab-8.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> gitimmersioncn
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lab-1.html">1. 设置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-2.html">2. 更多设置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-3.html">3. 创建项目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-4.html">4. 检查状态</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-5.html">5. 做出修改</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-6.html">6. 暂存修改</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-7.html">7. 暂存与提交</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-8.html">8. 提交修改</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. 聚焦修改，而不是文件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">目标</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">初次修改：允许默认名称</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">添加修改</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">第二次修改：添加注释</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">提交</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">添加第二次修改</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">提交第二次更改</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lab-50.html">50. 托管你的 Git 仓库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-51.html">51. 共享仓库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-52.html">52. 高级/未来的主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-53.html">53. 谢谢</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gitimmersioncn</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>9. 聚焦修改，而不是文件</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/lab-9.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>9. 聚焦修改，而不是文件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>目标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>了解 Git 聚焦于修改，而不是文件本身。</p></li>
+</ul>
+<p>大多数源码控制系统都使用文件。你将文件添加到源代码管理中，系统将从该点开始跟踪对该文件的修改。</p>
+<p>Git 聚焦于文件的修改而非文件本身。当你使用 Git 添加文件 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">file</span></code> 时，你并非在告诉 Git 要添加文件到仓库。
+而是说 Git 应当对文件的当前状态做记录以便稍后提交。</p>
+<p>我们将尝试在本次实验中探索其中的差异。</p>
+<div class="section" id="id3">
+<h3>初次修改：允许默认名称<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>如果未提供命令行参数，更改 <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> 程序接受一个默认值。</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="nb">name</span> <span class="o">=</span> <span class="no">ARGV</span><span class="o">.</span><span class="n">first</span> <span class="o">||</span> <span class="s2">&quot;World&quot;</span>
+
+<span class="nb">puts</span> <span class="s2">&quot;Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>添加修改<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>现在添加此次修改到 Git 的暂存区。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git add hello.rb
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>第二次修改：添加注释<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>现在给 <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> 程序添加一行注释。</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="c1"># Default is &quot;World&quot;</span>
+<span class="nb">name</span> <span class="o">=</span> <span class="no">ARGV</span><span class="o">.</span><span class="n">first</span> <span class="o">||</span> <span class="s2">&quot;World&quot;</span>
+
+<span class="nb">puts</span> <span class="s2">&quot;Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+</pre></div>
+</div>
+<p>检查当前状态</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+<p>你可以看到：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch master
+Changes to be committed:
+<span class="o">(</span>use <span class="s2">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+
+    modified:   hello.rb
+
+Changes not staged <span class="k">for</span> commit:
+<span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="o">)</span>
+<span class="o">(</span>use <span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="o">)</span>
+
+    modified:   hello.rb
+</pre></div>
+</div>
+<p>注意 <code class="docutils literal notranslate"><span class="pre">hello.rb</span></code> 在状态中被列了两次。第一次修改已被暂存，且准备提交。第二次修改还未暂存。如果你现在提交，那么注释不会保存到仓库中。</p>
+<p>让我们试试看。</p>
+</div>
+<div class="section" id="id6">
+<h3>提交<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>提交暂存的修改，然后重新检查状态。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Added a default value&quot;</span>
+$ git status
+</pre></div>
+</div>
+<p>你可以看到：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Added a default value&quot;</span>
+<span class="o">[</span>master dc1d42f<span class="o">]</span> Added a default value
+<span class="m">1</span> file changed, <span class="m">3</span> insertions<span class="o">(</span>+<span class="o">)</span>, <span class="m">1</span> deletion<span class="o">(</span>-<span class="o">)</span>
+$ git status
+On branch master
+Changes not staged <span class="k">for</span> commit:
+<span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="o">)</span>
+<span class="o">(</span>use <span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="o">)</span>
+
+    modified:   hello.rb
+
+no changes added to commit <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> and/or <span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">status</span></code> 命令告诉你 <code class="docutils literal notranslate"><span class="pre">hello.rb</span></code> 还有未记录的更改，且不在暂存区。</p>
+</div>
+<div class="section" id="id7">
+<h3>添加第二次修改<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>现在添加第二次修改到暂存区，然后执行 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git add .
+$ git status
+</pre></div>
+</div>
+<p><strong>注意</strong>：我们使用当前目录（<code class="docutils literal notranslate"><span class="pre">.</span></code>）作为要添加的文件。这是一种添加当前目录及其子目录下所有修改文件的习惯简写方式。
+但因为它添加所有修改，所以在做 <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">.</span></code> 前检查状态是一个好主意，只是为了确定你没有添加不想要的文件。</p>
+<p>我想你已经明白了 <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">.</span></code> 这个技巧，但为了安全，在余下的教程中我们将继续直接添加文件。</p>
+<p>你可以看到：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch master
+Changes to be committed:
+<span class="o">(</span>use <span class="s2">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+
+    modified:   hello.rb
+</pre></div>
+</div>
+<p>现在第二次修改已经暂存，且准备提交。</p>
+</div>
+<div class="section" id="id8">
+<h3>提交第二次更改<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Added a comment&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lab-50.html" class="btn btn-neutral float-right" title="50. 托管你的 Git 仓库" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lab-8.html" class="btn btn-neutral float-left" title="8. 提交修改" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qiwihui
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
